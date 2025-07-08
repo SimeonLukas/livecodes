@@ -946,7 +946,7 @@ const translation: I18nTranslation = {
     text: 'Klartext',
   },
   splash: {
-    loading: 'LiveCodes wird geladen…',
+    loading: 'Code & Create wird geladen…',
   },
   sync: {
     autoSync: 'Automatische Synchronisierung',

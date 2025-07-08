@@ -239,6 +239,11 @@
   padding: 0;
 }
 
+#login-link{
+  display: none !important;
+}
+
+
 // Modern browsers scrollbar
 // @supports (scrollbar-width: auto) {
 @supports (-moz-appearance: none) {
@@ -1545,6 +1550,10 @@ a.editor-title {
   }
 }
 
+
+
+
+
 /* modes */
 .embed {
   #toolbar {
@@ -2248,4 +2257,10 @@ body {
   .snackbars-right {
     z-index: 3000;
   }
+}
+
+
+#toolbar #logo img {
+    height: auto;
+    width: 20px;
 }
