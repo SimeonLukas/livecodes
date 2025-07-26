@@ -1,8 +1,10 @@
-export const lektion2Starter: Template = {
-  name: 'lektion2-starter',
-  title: window.deps.translateString('templates.beginner.lektion2-starter', '2. CSS Grundlagen'),
+import type { Template } from '../../models';
+
+export const second: Template = {
+  name: 'second',
+  title: "2. Grundlagen CSS",
   thumbnail: 'assets/templates/blank.svg',
-  activeEditor: 'style',
+   activeEditor: 'style',
   markup: {
     language: 'html',
     content: `

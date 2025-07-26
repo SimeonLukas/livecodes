@@ -1,80 +1,20 @@
-var getTemplateName = (_, templateName) => templateName;
-var e={name:"blank",title:getTemplateName("templates.starter.blank","Blank Project"),thumbnail:"assets/templates/blank.svg",activeEditor:"markup",markup:{language:"html",content:""},style:{language:"css",content:""},script:{language:"javascript",content:""},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var t={name:"first",title:"1. Grundlagen HTML",thumbnail:"assets/templates/blank.svg",activeEditor:"markup",markup:{language:"html",content:`
-<h1>Willkommen zu HTML!</h1>
-<p>Dies ist ein <strong>Paragraf</strong> mit <em>betontem Text</em>.</p>
-<ul>
-  <li>Erstes Listenelement</li>
-  <li>Zweites Listenelement</li>
-  <li>Drittes Listenelement</li>
-</ul>
-<a href="https://www.w3schools.com/html/" target="_blank">Mehr \xFCber HTML lernen</a>
-`.trimStart()},style:{language:"css",content:`
-/* F\xFCge hier dein CSS hinzu */
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-`.trimStart()},script:{language:"javascript",content:`
-// F\xFCge hier dein JavaScript hinzu
-console.log("HTML Grundlagen geladen!");
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var n={name:"second",title:"2. Grundlagen CSS",thumbnail:"assets/templates/blank.svg",activeEditor:"style",markup:{language:"html",content:`
-<div class="header">
-  <h1>CSS Styling</h1>
-</div>
-<div class="container">
-  <div class="card">
-    <h2>Karte 1</h2>
-    <p>Dies ist eine sch\xF6ne Karte mit CSS-Styling.</p>
-  </div>
-  <div class="card">
-    <h2>Karte 2</h2>
-    <p>Eine weitere Karte mit CSS-Styling.</p>
-  </div>
-</div>
-`.trimStart()},style:{language:"css",content:`
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-}
+import type { Template } from '../../models';
 
-.header {
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.container {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  max-width: 300px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
-}
-`.trimStart()},script:{language:"javascript",content:`
-// Experimentiere mit CSS-\xC4nderungen
-console.log("CSS Grundlagen geladen!");
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var o={name:"third",title:"3. Grundlagen JavaScript",thumbnail:"assets/templates/blank.svg",activeEditor:"script",markup:{language:"html",content:`
+export const third: Template = {
+  name: 'third',
+  title: "3. Grundlagen JavaScript",
+  thumbnail: 'assets/templates/blank.svg',
+  activeEditor: 'script',
+  markup: {
+    language: 'html',
+    content: `
 <div class="header">
   <h1>JavaScript Grundlagen</h1>
-  <p>Lerne JavaScript Schritt f\xFCr Schritt! \u{1F4DA}</p>
+  <p>Lerne JavaScript Schritt für Schritt! 📚</p>
 </div>
 
 <div class="lesson-section">
-  <h2>\u{1F3AF} Klick-Events</h2>
+  <h2>🎯 Klick-Events</h2>
   <div class="example-container">
     <button id="click-btn" class="demo-btn">Klick mich!</button>
     <p id="click-result">Noch nicht geklickt</p>
@@ -82,24 +22,24 @@ console.log("CSS Grundlagen geladen!");
 </div>
 
 <div class="lesson-section">
-  <h2>\u{1F3A8} Stil \xE4ndern</h2>
+  <h2>🎨 Stil ändern</h2>
   <div class="example-container">
-    <div id="color-box" class="color-box">Ich \xE4ndere meine Farbe!</div>
+    <div id="color-box" class="color-box">Ich ändere meine Farbe!</div>
     <button id="color-btn" class="demo-btn">Farbe wechseln</button>
   </div>
 </div>
 
 <div class="lesson-section">
-  <h2>\u{1F4DD} Text \xE4ndern</h2>
+  <h2>📝 Text ändern</h2>
   <div class="example-container">
     <h3 id="text-display">Hallo Welt!</h3>
     <input type="text" id="text-input" placeholder="Neuen Text eingeben">
-    <button id="text-btn" class="demo-btn">Text \xE4ndern</button>
+    <button id="text-btn" class="demo-btn">Text ändern</button>
   </div>
 </div>
 
 <div class="lesson-section">
-  <h2>\u{1F522} Z\xE4hler</h2>
+  <h2>🔢 Zähler</h2>
   <div class="example-container">
     <div id="counter-display" class="counter">0</div>
     <button id="plus-btn" class="demo-btn">+1</button>
@@ -109,13 +49,17 @@ console.log("CSS Grundlagen geladen!");
 </div>
 
 <div class="lesson-section">
-  <h2>\u{1F3AA} Einfache Animation</h2>
+  <h2>🎪 Einfache Animation</h2>
   <div class="example-container">
     <div id="move-box" class="move-box">Ich bewege mich!</div>
     <button id="move-btn" class="demo-btn">Bewegen</button>
   </div>
 </div>
-`.trimStart()},style:{language:"css",content:`
+`.trimStart(),
+  },
+  style: {
+    language: 'css',
+    content: `
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -217,22 +161,26 @@ body {
   color: #333;
   font-weight: bold;
 }
-`.trimStart()},script:{language:"javascript",content:`
-// \u{1F680} JavaScript Grundlagen - Einfache Version
-console.log("JavaScript geladen! Schau in die Konsole f\xFCr Erkl\xE4rungen.");
+`.trimStart(),
+  },
+  script: {
+    language: 'javascript',
+    content: `
+// 🚀 JavaScript Grundlagen - Einfache Version
+console.log("JavaScript geladen! Schau in die Konsole für Erklärungen.");
 
 // ===========================================
 // 1. KLICK-EVENTS - Auf Buttons reagieren
 // ===========================================
 
-// Button-Element ausw\xE4hlen
+// Button-Element auswählen
 const clickButton = document.getElementById('click-btn');
 const clickResult = document.getElementById('click-result');
 
-// Z\xE4hler f\xFCr Klicks
+// Zähler für Klicks
 let clickCount = 0;
 
-// Event Listener hinzuf\xFCgen
+// Event Listener hinzufügen
 clickButton.addEventListener('click', function() {
     clickCount = clickCount + 1; // oder: clickCount++
     clickResult.textContent = 'Button wurde ' + clickCount + ' mal geklickt!';
@@ -241,7 +189,7 @@ clickButton.addEventListener('click', function() {
 });
 
 // ===========================================
-// 2. STIL \xC4NDERN - CSS mit JavaScript
+// 2. STIL ÄNDERN - CSS mit JavaScript
 // ===========================================
 
 const colorButton = document.getElementById('color-btn');
@@ -252,7 +200,7 @@ const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#dda0dd'
 let currentColorIndex = 0;
 
 colorButton.addEventListener('click', function() {
-    // N\xE4chste Farbe ausw\xE4hlen
+    // Nächste Farbe auswählen
     currentColorIndex = currentColorIndex + 1;
     
     // Wenn am Ende angekommen, wieder von vorne beginnen
@@ -260,14 +208,14 @@ colorButton.addEventListener('click', function() {
         currentColorIndex = 0;
     }
     
-    // Farbe \xE4ndern
+    // Farbe ändern
     colorBox.style.backgroundColor = colors[currentColorIndex];
     
-    console.log('Farbe ge\xE4ndert zu:', colors[currentColorIndex]);
+    console.log('Farbe geändert zu:', colors[currentColorIndex]);
 });
 
 // ===========================================
-// 3. TEXT \xC4NDERN - Inhalte dynamisch \xE4ndern
+// 3. TEXT ÄNDERN - Inhalte dynamisch ändern
 // ===========================================
 
 const textButton = document.getElementById('text-btn');
@@ -278,12 +226,12 @@ textButton.addEventListener('click', function() {
     // Text aus Input-Feld holen
     const newText = textInput.value;
     
-    // Pr\xFCfen ob Text eingegeben wurde
+    // Prüfen ob Text eingegeben wurde
     if (newText.trim() !== '') {
         textDisplay.textContent = newText;
         textInput.value = ''; // Input-Feld leeren
         
-        console.log('Text ge\xE4ndert zu:', newText);
+        console.log('Text geändert zu:', newText);
     } else {
         alert('Bitte gib einen Text ein!');
     }
@@ -297,7 +245,7 @@ textInput.addEventListener('keypress', function(event) {
 });
 
 // ===========================================
-// 4. Z\xC4HLER - Variablen verwenden
+// 4. ZÄHLER - Variablen verwenden
 // ===========================================
 
 const counterDisplay = document.getElementById('counter-display');
@@ -305,16 +253,16 @@ const plusButton = document.getElementById('plus-btn');
 const minusButton = document.getElementById('minus-btn');
 const resetButton = document.getElementById('reset-btn');
 
-// Z\xE4hler-Variable
+// Zähler-Variable
 let counter = 0;
 
 // Funktion um Anzeige zu aktualisieren
 function updateCounter() {
     counterDisplay.textContent = counter;
     
-    // Farbe je nach Wert \xE4ndern
+    // Farbe je nach Wert ändern
     if (counter > 0) {
-        counterDisplay.style.color = '#27ae60'; // gr\xFCn
+        counterDisplay.style.color = '#27ae60'; // grün
     } else if (counter < 0) {
         counterDisplay.style.color = '#e74c3c'; // rot
     } else {
@@ -326,21 +274,21 @@ function updateCounter() {
 plusButton.addEventListener('click', function() {
     counter = counter + 1;
     updateCounter();
-    console.log('Z\xE4hler erh\xF6ht auf:', counter);
+    console.log('Zähler erhöht auf:', counter);
 });
 
 // Minus-Button
 minusButton.addEventListener('click', function() {
     counter = counter - 1;
     updateCounter();
-    console.log('Z\xE4hler verringert auf:', counter);
+    console.log('Zähler verringert auf:', counter);
 });
 
 // Reset-Button
 resetButton.addEventListener('click', function() {
     counter = 0;
     updateCounter();
-    console.log('Z\xE4hler zur\xFCckgesetzt');
+    console.log('Zähler zurückgesetzt');
 });
 
 // ===========================================
@@ -357,18 +305,18 @@ moveButton.addEventListener('click', function() {
         // Nach rechts bewegen
         moveBox.style.transform = 'translateX(100px) rotate(180deg)';
         moveBox.style.backgroundColor = '#e17055';
-        moveButton.textContent = 'Zur\xFCck';
+        moveButton.textContent = 'Zurück';
         isMovedRight = true;
         
         console.log('Box nach rechts bewegt');
     } else {
-        // Zur\xFCck zur urspr\xFCnglichen Position
+        // Zurück zur ursprünglichen Position
         moveBox.style.transform = 'translateX(0px) rotate(0deg)';
         moveBox.style.backgroundColor = '#4ecdc4';
         moveButton.textContent = 'Bewegen';
         isMovedRight = false;
         
-        console.log('Box zur\xFCck bewegt');
+        console.log('Box zurück bewegt');
     }
 });
 
@@ -378,18 +326,25 @@ moveButton.addEventListener('click', function() {
 
 // Nach 2 Sekunden Tipps anzeigen
 setTimeout(function() {
-    console.log('\u{1F393} JavaScript Grundlagen Tipps:');
-    console.log('1. document.getElementById() - Element ausw\xE4hlen');
+    console.log('🎓 JavaScript Grundlagen Tipps:');
+    console.log('1. document.getElementById() - Element auswählen');
     console.log('2. addEventListener() - Auf Events reagieren');
-    console.log('3. element.textContent - Text \xE4ndern');
-    console.log('4. element.style - CSS-Eigenschaften \xE4ndern');
+    console.log('3. element.textContent - Text ändern');
+    console.log('4. element.style - CSS-Eigenschaften ändern');
     console.log('5. Variablen mit let/const - Werte speichern');
     console.log('6. Funktionen - Code wiederverwenden');
     console.log('7. if/else - Entscheidungen treffen');
-    console.log('Experimentiere mit dem Code! \u{1F680}');
+    console.log('Experimentiere mit dem Code! 🚀');
 }, 2000);
 
 // Willkommensnachricht
-console.log('\u{1F4DA} Lerne JavaScript Schritt f\xFCr Schritt!');
-console.log('Jeder Abschnitt erkl\xE4rt ein wichtiges Konzept.');
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var m=[e,t,n,o];export{m as starterTemplates};
+console.log('📚 Lerne JavaScript Schritt für Schritt!');
+console.log('Jeder Abschnitt erklärt ein wichtiges Konzept.');
+`.trimStart(),
+  },
+  stylesheets: [],
+  scripts: [],
+  cssPreset: '',
+  imports: {},
+  types: {},
+};

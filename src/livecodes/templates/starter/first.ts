@@ -1,8 +1,8 @@
 import type { Template } from '../../models';
 
-export const lektion1Starter: Template = {
-  name: 'lektion1-starter',
-  title: window.deps.translateString('templates.starter.lektion1-starter', '1. HTML Grundlagen'),
+export const first: Template = {
+  name: 'first',
+  title: "1. Grundlagen HTML",
   thumbnail: 'assets/templates/blank.svg',
   activeEditor: 'markup',
   markup: {
