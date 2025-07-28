@@ -2,19 +2,19 @@ import type { Template } from '../../models';
 
 export const third: Template = {
   name: 'third',
-  title: "3. Grundlagen JavaScript",
+  title: "3. Click Events & Zähler",
   thumbnail: 'assets/templates/blank.svg',
   activeEditor: 'script',
   markup: {
     language: 'html',
     content: `
 <div class="header">
-  <h1>JavaScript Grundlagen</h1>
-  <p>Lerne JavaScript Schritt für Schritt! 📚</p>
+  <h1>JavaScript Grundlagen - Click Events</h1>
+  <p>Lerne wie man auf Klicks reagiert! 🖱️</p>
 </div>
 
 <div class="lesson-section">
-  <h2>🎯 Klick-Events</h2>
+  <h2>🎯 Einfacher Klick-Event</h2>
   <div class="example-container">
     <button id="click-btn" class="demo-btn">Klick mich!</button>
     <p id="click-result">Noch nicht geklickt</p>
@@ -22,37 +22,14 @@ export const third: Template = {
 </div>
 
 <div class="lesson-section">
-  <h2>🎨 Stil ändern</h2>
-  <div class="example-container">
-    <div id="color-box" class="color-box">Ich ändere meine Farbe!</div>
-    <button id="color-btn" class="demo-btn">Farbe wechseln</button>
-  </div>
-</div>
-
-<div class="lesson-section">
-  <h2>📝 Text ändern</h2>
-  <div class="example-container">
-    <h3 id="text-display">Hallo Welt!</h3>
-    <input type="text" id="text-input" placeholder="Neuen Text eingeben">
-    <button id="text-btn" class="demo-btn">Text ändern</button>
-  </div>
-</div>
-
-<div class="lesson-section">
-  <h2>🔢 Zähler</h2>
+  <h2>🔢 Zähler mit Buttons</h2>
   <div class="example-container">
     <div id="counter-display" class="counter">0</div>
-    <button id="plus-btn" class="demo-btn">+1</button>
-    <button id="minus-btn" class="demo-btn">-1</button>
-    <button id="reset-btn" class="demo-btn">Reset</button>
-  </div>
-</div>
-
-<div class="lesson-section">
-  <h2>🎪 Einfache Animation</h2>
-  <div class="example-container">
-    <div id="move-box" class="move-box">Ich bewege mich!</div>
-    <button id="move-btn" class="demo-btn">Bewegen</button>
+    <div class="button-group">
+      <button id="plus-btn" class="demo-btn">+1</button>
+      <button id="minus-btn" class="demo-btn">-1</button>
+      <button id="reset-btn" class="demo-btn">Reset</button>
+    </div>
   </div>
 </div>
 `.trimStart(),
@@ -112,19 +89,6 @@ body {
   transform: translateY(-2px);
 }
 
-.color-box {
-  width: 200px;
-  height: 100px;
-  background: #ff6b6b;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  transition: all 0.5s ease;
-}
-
 .counter {
   font-size: 48px;
   font-weight: bold;
@@ -133,27 +97,9 @@ body {
   min-width: 100px;
 }
 
-#text-input {
-  padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 250px;
-}
-
-.move-box {
-  width: 100px;
-  height: 100px;
-  background: #4ecdc4;
-  border-radius: 50%;
+.button-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  transition: all 0.5s ease;
-  text-align: center;
-  font-size: 14px;
+  gap: 10px;
 }
 
 #click-result {
@@ -166,14 +112,14 @@ body {
   script: {
     language: 'javascript',
     content: `
-// 🚀 JavaScript Grundlagen - Einfache Version
-console.log("JavaScript geladen! Schau in die Konsole für Erklärungen.");
+// 🚀 JavaScript Grundlagen - Click Events
+console.log('Click Events Tutorial geladen!');
 
 // ===========================================
-// 1. KLICK-EVENTS - Auf Buttons reagieren
+// 1. EINFACHER KLICK-EVENT
 // ===========================================
 
-// Button-Element auswählen
+// Elemente auswählen
 const clickButton = document.getElementById('click-btn');
 const clickResult = document.getElementById('click-result');
 
@@ -189,63 +135,7 @@ clickButton.addEventListener('click', function() {
 });
 
 // ===========================================
-// 2. STIL ÄNDERN - CSS mit JavaScript
-// ===========================================
-
-const colorButton = document.getElementById('color-btn');
-const colorBox = document.getElementById('color-box');
-
-// Array mit verschiedenen Farben
-const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#dda0dd'];
-let currentColorIndex = 0;
-
-colorButton.addEventListener('click', function() {
-    // Nächste Farbe auswählen
-    currentColorIndex = currentColorIndex + 1;
-    
-    // Wenn am Ende angekommen, wieder von vorne beginnen
-    if (currentColorIndex >= colors.length) {
-        currentColorIndex = 0;
-    }
-    
-    // Farbe ändern
-    colorBox.style.backgroundColor = colors[currentColorIndex];
-    
-    console.log('Farbe geändert zu:', colors[currentColorIndex]);
-});
-
-// ===========================================
-// 3. TEXT ÄNDERN - Inhalte dynamisch ändern
-// ===========================================
-
-const textButton = document.getElementById('text-btn');
-const textInput = document.getElementById('text-input');
-const textDisplay = document.getElementById('text-display');
-
-textButton.addEventListener('click', function() {
-    // Text aus Input-Feld holen
-    const newText = textInput.value;
-    
-    // Prüfen ob Text eingegeben wurde
-    if (newText.trim() !== '') {
-        textDisplay.textContent = newText;
-        textInput.value = ''; // Input-Feld leeren
-        
-        console.log('Text geändert zu:', newText);
-    } else {
-        alert('Bitte gib einen Text ein!');
-    }
-});
-
-// Bonus: Enter-Taste funktioniert auch
-textInput.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        textButton.click(); // Button-Klick simulieren
-    }
-});
-
-// ===========================================
-// 4. ZÄHLER - Variablen verwenden
+// 2. ZÄHLER MIT MEHREREN BUTTONS
 // ===========================================
 
 const counterDisplay = document.getElementById('counter-display');
@@ -292,54 +182,20 @@ resetButton.addEventListener('click', function() {
 });
 
 // ===========================================
-// 5. EINFACHE ANIMATION - CSS-Transforms
+// LERNTIPPS IN DER KONSOLE
 // ===========================================
 
-const moveButton = document.getElementById('move-btn');
-const moveBox = document.getElementById('move-box');
-
-let isMovedRight = false;
-
-moveButton.addEventListener('click', function() {
-    if (isMovedRight === false) {
-        // Nach rechts bewegen
-        moveBox.style.transform = 'translateX(100px) rotate(180deg)';
-        moveBox.style.backgroundColor = '#e17055';
-        moveButton.textContent = 'Zurück';
-        isMovedRight = true;
-        
-        console.log('Box nach rechts bewegt');
-    } else {
-        // Zurück zur ursprünglichen Position
-        moveBox.style.transform = 'translateX(0px) rotate(0deg)';
-        moveBox.style.backgroundColor = '#4ecdc4';
-        moveButton.textContent = 'Bewegen';
-        isMovedRight = false;
-        
-        console.log('Box zurück bewegt');
-    }
-});
-
-// ===========================================
-// 6. HILFREICHE TIPPS IN DER KONSOLE
-// ===========================================
-
-// Nach 2 Sekunden Tipps anzeigen
 setTimeout(function() {
-    console.log('🎓 JavaScript Grundlagen Tipps:');
+    console.log('🎓 Click Events Tipps:');
     console.log('1. document.getElementById() - Element auswählen');
-    console.log('2. addEventListener() - Auf Events reagieren');
-    console.log('3. element.textContent - Text ändern');
-    console.log('4. element.style - CSS-Eigenschaften ändern');
-    console.log('5. Variablen mit let/const - Werte speichern');
-    console.log('6. Funktionen - Code wiederverwenden');
-    console.log('7. if/else - Entscheidungen treffen');
-    console.log('Experimentiere mit dem Code! 🚀');
+    console.log('2. addEventListener("click", function() {}) - Auf Klicks reagieren');
+    console.log('3. Variablen mit let - Werte speichern und ändern');
+    console.log('4. Funktionen - Code organisieren und wiederverwenden');
+    console.log('5. if/else - Entscheidungen im Code treffen');
+    console.log('Probiere es aus! 🚀');
 }, 2000);
 
-// Willkommensnachricht
-console.log('📚 Lerne JavaScript Schritt für Schritt!');
-console.log('Jeder Abschnitt erklärt ein wichtiges Konzept.');
+console.log('🖱️ Klicke auf die Buttons und beobachte die Konsole!');
 `.trimStart(),
   },
   stylesheets: [],
